@@ -5,20 +5,20 @@
 class Gomi < Formula
   desc "Branch delete tool made by Golang"
   homepage "https://jiko21.me/Gomi"
-  version "0.2.6"
+  version "0.3.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jiko21/Gomi/releases/download/v0.2.6/Gomi_darwin_x86_64.tar.gz"
-    sha256 "3d3a34f02da52338905b99a31630067985740e7b60cb6a6acefab2a882e77bd0"
+    url "https://github.com/jiko21/Gomi/releases/download/v0.3.0/Gomi_darwin_x86_64.tar.gz"
+    sha256 "9fe8ba2d66ccf4f9ded18d08828c5aeb1316967981ae301cac79cc6abd7fe98c"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jiko21/Gomi/releases/download/v0.2.6/Gomi_linux_x86_64.tar.gz"
-    sha256 "a55e9110fa4b419928c05e5a79304fbb2245fb6ddec0f596f18fe625274d1881"
+    url "https://github.com/jiko21/Gomi/releases/download/v0.3.0/Gomi_linux_x86_64.tar.gz"
+    sha256 "83f4d6ba20c5229f760021e1d257b82150e6c56a24d015500c45032e3dea7a9b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jiko21/Gomi/releases/download/v0.2.6/Gomi_linux_arm64.tar.gz"
-    sha256 "b5479cb4872bbe41715cb07b28d0ff0c06206287dcc5e4ec6cbd53432a21f499"
+    url "https://github.com/jiko21/Gomi/releases/download/v0.3.0/Gomi_linux_arm64.tar.gz"
+    sha256 "5277105d90b5e54e61d3155090a6a7cbac49538179b53acd91ecb14777f0df73"
   end
 
   def install
