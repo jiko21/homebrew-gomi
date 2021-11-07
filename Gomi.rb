@@ -5,23 +5,43 @@
 class Gomi < Formula
   desc "Branch delete tool made by Golang"
   homepage "https://jiko21.me/Gomi"
-  version "0.3.0"
-  bottle :unneeded
+  version "0.3.1"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jiko21/Gomi/releases/download/v0.3.0/Gomi_darwin_x86_64.tar.gz"
-    sha256 "9fe8ba2d66ccf4f9ded18d08828c5aeb1316967981ae301cac79cc6abd7fe98c"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jiko21/Gomi/releases/download/v0.3.0/Gomi_linux_x86_64.tar.gz"
-    sha256 "83f4d6ba20c5229f760021e1d257b82150e6c56a24d015500c45032e3dea7a9b"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jiko21/Gomi/releases/download/v0.3.0/Gomi_linux_arm64.tar.gz"
-    sha256 "5277105d90b5e54e61d3155090a6a7cbac49538179b53acd91ecb14777f0df73"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_darwin_x86_64.tar.gz"
+      sha256 "e99d3ba88fad9942c44f27b30411294dd261e069a7d12e9a0fd82ebad1be5752"
+
+      def install
+        bin.install "gomi"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_darwin_arm64.tar.gz"
+      sha256 "75482af9c18ddac2fc7b6310a50c9fb305581643ca1c4be5f73d8d64993f4f20"
+
+      def install
+        bin.install "gomi"
+      end
+    end
   end
 
-  def install
-    bin.install "gomi"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_linux_x86_64.tar.gz"
+      sha256 "f7c1c0d4914499e221aaf896c4636e62eb5a20425103b79ec0f19bb76f626f53"
+
+      def install
+        bin.install "gomi"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_linux_arm64.tar.gz"
+      sha256 "7f1ec4a6cbd54e75ec692856d0f1b0ffdbfd6164c8ffe069c4493e58a3791ba6"
+
+      def install
+        bin.install "gomi"
+      end
+    end
   end
 end
