@@ -5,20 +5,20 @@
 class Gomi < Formula
   desc "Branch delete tool made by Golang"
   homepage "https://jiko21.me/Gomi"
-  version "0.3.1"
+  version "0.3.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_darwin_x86_64.tar.gz"
-      sha256 "e99d3ba88fad9942c44f27b30411294dd261e069a7d12e9a0fd82ebad1be5752"
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.2/Gomi_darwin_x86_64.tar.gz"
+      sha256 "89fd593b5762ebe28d81def3d45c2ab96587fc9b52f7b3e341f3bc440edcca1f"
 
       def install
         bin.install "gomi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_darwin_arm64.tar.gz"
-      sha256 "75482af9c18ddac2fc7b6310a50c9fb305581643ca1c4be5f73d8d64993f4f20"
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.2/Gomi_darwin_arm64.tar.gz"
+      sha256 "7f943b7352ec4335a9c1b5de1db21ecc7cdd4ec8d093de371e1c29671e6a9ecf"
 
       def install
         bin.install "gomi"
@@ -27,17 +27,17 @@ class Gomi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_linux_x86_64.tar.gz"
-      sha256 "f7c1c0d4914499e221aaf896c4636e62eb5a20425103b79ec0f19bb76f626f53"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.2/Gomi_linux_arm64.tar.gz"
+      sha256 "9b1cd988e6c157a8725444d3f0c04c717a65d0e6b0a0138da40b69485fbefd2c"
 
       def install
         bin.install "gomi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.1/Gomi_linux_arm64.tar.gz"
-      sha256 "7f1ec4a6cbd54e75ec692856d0f1b0ffdbfd6164c8ffe069c4493e58a3791ba6"
+    if Hardware::CPU.intel?
+      url "https://github.com/jiko21/Gomi/releases/download/v0.3.2/Gomi_linux_x86_64.tar.gz"
+      sha256 "1a27b49de6148ab4a3dd7b98e2866a861c260db2c5904d7545d3b4e0d374a00d"
 
       def install
         bin.install "gomi"
