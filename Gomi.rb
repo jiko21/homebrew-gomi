@@ -5,20 +5,20 @@
 class Gomi < Formula
   desc "Branch delete tool made by Golang"
   homepage "https://jiko21.me/Gomi"
-  version "0.3.3"
+  version "1.0.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.3/Gomi_darwin_arm64.tar.gz"
-      sha256 "79da16b0dcd6eb62e24e0dee20e6bb10b669e1e68387e4116ce62cfd9e0e169d"
+    if Hardware::CPU.intel?
+      url "https://github.com/jiko21/Gomi/releases/download/v1.0.0/Gomi_1.0.0_macOS_x86_64.tar.gz"
+      sha256 "38782698b1e4fa52f5f2e472de11a4e1fe0e5b0f170b47379457efafa909229e"
 
       def install
         bin.install "gomi"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.3/Gomi_darwin_x86_64.tar.gz"
-      sha256 "ed62b8d45f3b98e941748cf9b063b066dbb976dbffcda2ba042b09d45ad3cf80"
+    if Hardware::CPU.arm?
+      url "https://github.com/jiko21/Gomi/releases/download/v1.0.0/Gomi_1.0.0_macOS_arm64.tar.gz"
+      sha256 "fdeeed220e0ad2b818ea5d18522e4888427aa689b310000d9ebb3aa20f0cd60e"
 
       def install
         bin.install "gomi"
@@ -27,17 +27,17 @@ class Gomi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.3/Gomi_linux_x86_64.tar.gz"
-      sha256 "2ed95a66c9b87ec521a7160c928d6e877762f5ae94b145343ff08279357d490c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jiko21/Gomi/releases/download/v1.0.0/Gomi_1.0.0_Linux_arm64.tar.gz"
+      sha256 "a70cdc8f3b426ca7bd472054fdbd842106121d9dc2dfb37ac9efef587c6cdc87"
 
       def install
         bin.install "gomi"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jiko21/Gomi/releases/download/v0.3.3/Gomi_linux_arm64.tar.gz"
-      sha256 "2e89f07bfebb5cd01a9d89e50bbabdd97aab275a935b3bb76e11277b006506c2"
+    if Hardware::CPU.intel?
+      url "https://github.com/jiko21/Gomi/releases/download/v1.0.0/Gomi_1.0.0_Linux_x86_64.tar.gz"
+      sha256 "6e67a9708923a3d464ea8e16fa9f7740fc9fcacf19356ae0dc5e5aa9b6e0ce62"
 
       def install
         bin.install "gomi"
